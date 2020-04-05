@@ -1,0 +1,46 @@
+<div class="limiter">
+	<div class="container-login100">			
+			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+				
+
+                    <%= form_with(model: [ @user, @user.posts.build] ,method:'post', class: "login100-form validate-form") do |f|%>	
+					<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+						
+					<span class="login100-form-title p-b-49">
+						Post Your Trip
+					</span>
+
+					<div class="wrap-input100 validate-input m-b-23" data-validate = "Country is required">
+						<span class="label-input100">Country Visited</span>
+                        <%= f.text_field :country, class: "input100", placeholder: "Country You Visited" %><br>
+						<span class="focus-input100" data-symbol="&#xf206;"></span>
+					</div>
+
+					
+                
+                    
+					<div class="drag_drop">
+                        <%= f.drag_and_drop_file_field :image, "Drag and Drop Images Here", size_limit: 5_000_000, accept: 'image/png, image/jpeg, image/gif, image/tiff' %><br>
+                    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate="Local Location is required">
+						<span class="label-input100"> Write Story </span>
+                        <%= f.text_area :write, class: "input100 text_area", placeholder: "the story..." %><br>
+						<span class="focus-input100" data-symbol="&#xf206;"></span>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							 <%= f.button "submit", class: "login100-form-btn", style: "padding-top: 1.4rem"%><br>
+						</div>
+					</div>
+
+				<% end %>
+			</div>
+	</div>
+</div>
+	
+
+<div id=""></div>
+

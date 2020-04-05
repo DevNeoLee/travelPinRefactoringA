@@ -1,0 +1,385 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require active_storage_drag_and_drop
+ *= require_tree .
+ *= require_self
+ */
+ 
+ /*-----------application.html.erb---------------------*/
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Sen', sans-serif;
+}
+
+.container {
+    min-height: 100vh;
+    width: 100vw;
+}
+    
+.main_container {
+    height: 100%;
+    width: 100%;
+
+}
+.backphoto {
+    background: asset_url('bg-01.jpg');
+    
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.main_nav {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 9fr;
+     /* justify-content: space-around; */
+ }
+
+.logo_link {
+    text-decoration: none;
+}
+
+.logo {
+    text-align: center;
+    display: flex;
+    justify-items: center;
+    margin: 0 auto;
+    padding: 2rem 0rem 1rem 1rem;
+}
+
+.logo_img {
+    width: 3rem;
+    background-color: white;
+    padding: 0.8rem 0.2rem 0.8rem 0.5rem;
+    /* border: 1px solid tpink; */
+    border-radius: 0.3rem 0 0 0.3rem;
+}
+
+ .logo h1 {
+     text-align: center;
+     background-color: white;
+     padding: 1.5rem 1rem 0.5rem 0rem;
+     /* border: 1px solid lightpink; */
+     border-radius: 0 0.3rem 0.3rem 0;
+     color: black;
+ }
+
+ .search_nav_container {
+     display: grid;
+     grid-template-columns: 1fr 2.5fr;
+ }
+ .search_bar_container {
+    display: grid;
+    grid-template-columns: 8fr 2fr;
+ }
+
+ .nav_input {
+    margin: 2rem 0rem 0 1.5rem;
+    height: 3.9rem;
+    border-radius: 0.3rem 0 0 0.3rem;
+    font-size: 1.3rem;
+    font: rgba(109, 109, 109, 0.336);
+ }
+
+ .nav_search_button {
+    margin: 2rem 1rem 0 0;
+    height: 3.9rem;
+    border-radius: 0 0.3rem 0.3rem 0;
+    font-size: 0.8rem;
+    font: rgba(68, 68, 68, 0.103);
+    background-color: rgba(250, 250, 250, 0.945);
+ }
+
+  .right_nav {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+     background-color: white;
+     border-radius: 0.3rem;
+     height: 3.9rem;
+     margin: 2rem 1rem 0 0;
+ }
+
+ .right_nav li {
+     padding-top: 1.2rem;
+ }
+
+ .nav_list {
+     text-decoration: none;
+    font-size: 1.2rem ;
+    font: rgba(109, 109, 109, 0.178);
+ }
+
+ footer {
+     padding-bottom: 2rem;
+     text-align: center;
+
+ }
+
+ footer span {
+     padding-right: 1rem;
+     padding-left: 1rem;
+ }
+
+ footer span p {
+     font-size: 1rem;
+ }
+
+ footer span a {
+     text-decoration: none;
+     font-size: 1rem;
+ }
+
+ /*-------------------index.html.erb----------------------*/
+
+ .index_container, .show_container{
+    margin: 0rem auto;
+    justify-content: center;
+    height: 100vh;
+    
+}
+
+ .log_container {
+    padding: 1rem;
+    margin: 0 auto;
+    display: grid;
+    border-radius: 0.7rem;
+    background: white;
+    width: 50%;
+}
+
+.log_container h3 {
+    text-align: center;
+}
+
+
+.logo_mid {
+    display: grid;
+    justify-items: center;
+    margin: 0 auto;
+}
+
+.logo_mid h1 {
+    color: black;
+    float: left;
+    padding-bottom: 2rem;
+}
+
+.loginlinks {
+    margin: 2rem auto;
+    width: 50%;
+}
+
+.log_font{
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+
+
+ .signup_link, .login_link {
+     padding: 2rem 0 0 0;
+     margin: 0 auto;
+     text-align: center;
+ }
+
+ .log_Kontainer {
+     display: grid;
+     justify-content: center;
+ }
+ .log_message {
+
+     margin: 1rem;
+     border-radius: 0.4rem;
+     font-size: 1.3rem;
+     background-color: white;
+     line-height: 3;
+     font: rgba(151, 151, 151, 0.185);
+    
+ }
+
+ /*-----practice version----------show.html.erb ,users------------*/
+ .phrame {
+    display: grid;
+    grid-template-columns: 1fr;
+ }
+ 
+ .kontainer {
+    columns: 17rem;
+    padding: 1rem;
+    margin: auto;
+    width: 96.5%;
+ }
+
+ .kard {
+     list-style-type: none;
+     display: grid;
+     grid-template-columns: 1fr;
+     break-inside: avoid;
+     background: white;
+     border-radius: 0.5rem;
+     box-shadow: 0.1px 0.1px 2px black;
+     margin-bottom: 1rem;
+ }
+
+ .kard_image {
+    width: 100%;
+    display: block;
+    border-radius: 3px 3px 0 0;
+ }
+
+ .kard_title {
+     text-align: center;
+     padding-top: 0.5rem;
+ }
+ .kard_title p{
+     font-size: 1.5rem;
+    
+ }
+ .kard_write {
+     width: 100%;
+     padding: 0.7rem;
+     text-align: center;
+ 
+
+     
+ }
+
+ .kard_write p  {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    /* overflow-wrap: break-word; */
+    border-radius: 3px 3px 0 0;
+    text-align: center;
+    margin: 1rem;
+
+  
+ }
+
+ .links {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 0.8rem;
+ }
+
+ .links a {
+     text-decoration: none;
+ }
+
+ .rink {
+     font-size: 0.8rem
+ }
+
+ 
+
+
+
+
+
+
+
+/*---------------show.html.erb ,users------------*/
+.post_deleted_message {
+    display: grid;
+    justify-content: center;
+}
+
+hr {
+    opacity: 0.2;
+    margin: 1.5rem;
+}
+
+.posting_container {
+    padding: 0.5rem;
+    margin: 0rem;
+    border: 1px solid darkgray;
+    
+   display: grid;
+   grid-gap: 0.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+
+ 
+}
+
+.wrap-posting100 {
+  background: #fff;
+  border-radius: 0.8rem;
+  
+}
+
+.flex-c-m {
+    margin-top: 0rem;
+}
+
+.flex-c-m a {
+    text-decoration: none; 
+    font-size: 0.8rem;
+}
+/*---------- index.html.erb , post --------------*/
+
+.index_no_result {
+    height: 100vh;
+    text-align: center;
+    border: 0;
+
+}
+
+.no_result {
+    margin: 0 auto;
+    display: grid;
+    width: 30rem;
+    border: 0;
+    justify-content: center;
+}
+
+.no_result_message {
+    font-size: 1.3rem;
+}
+
+/*-------- new.html.erb, post---------*/
+
+/* .drag_drop {
+    width: 12rem;
+    height: 14rem;
+    border: dotted 0.3rem lightseagreen;
+    display: grid;
+    margin: 1rem 0 1rem 0;
+
+} */
+
+.drag_drop p {
+    margin: 0 auto;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.text_area {
+    height: 7rem;
+}
+
+/*-----------show.html.erb, posts -----*/
+
+.phrame2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.no_text_decoration {
+    text-decoration: none;
+}

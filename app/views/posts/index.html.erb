@@ -1,0 +1,44 @@
+
+<% if @posts[0][:notice] %>
+    <div class="index_no_result">
+        <div class="posting_container no_result">
+                <div class="wrap-posting100 p-l-55 p-r-55 p-t-45 p-b-54 no_result">
+                        <div class="wrap-input100 validate-input">
+                            <span class="label-input100 no_result_message"><%= @posts[0][:notice] %></span>
+                        </div>   
+                </div>
+        </div>
+    </div>
+<% else %> 
+   
+<div class="phrame">
+    <div class="log_Kontainer">
+            <%flash.each do |name, msg|%>
+                    <div class="log_message"><%= msg %></div>
+            <%end %>
+    </div>
+    <ul class="kontainer">
+        <% @posts.reverse.each do |post| %>
+            <li class="kard">
+                 
+                <%=image_tag post.image, class: "kard_image" %>
+
+                <div class="kard_title">
+                    <p><%= post.country %><p>
+                </div>
+
+                <div class="kard_write"><p><%= post.write %></p></div>
+                <div class="links">
+                    <%= link_to 'enjoy', user_post_path(@user, post), class: "login100-social-item bg1 rink" %>
+                    <%= link_to 'edit', edit_user_post_path(@user, post), class: "login100-social-item bg2 rink" %>
+                    <%= link_to 'delete',user_post_path(@user, post), method: 'delete', class: "login100-social-item bg3 rink", data: { confirm: "are you sure?"} %>     
+                </div>
+            </li>
+        <% end %>
+    </ul>
+</div>
+<% end %>
+
+
+
+

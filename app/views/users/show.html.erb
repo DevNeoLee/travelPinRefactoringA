@@ -1,0 +1,33 @@
+
+<div class="phrame">
+
+    <div class="log_Kontainer">
+            <%flash.each do |name, msg|%>
+                    <div class="log_message"><%= msg %></div>
+            <%end %>
+    </div>
+    <ul class="kontainer">
+        <% @user.posts.reverse.each do |post| %>
+            <li class="kard">
+                 
+                
+                 <%=image_tag post.image, class: "kard_image"%>
+                <div class="kard_title" style="margin-top: 1.2rem;">
+                    <p><%= post.country %><p>
+                </div>
+
+                <div class="kard_write"><p><%= post.write %></p></div>
+                <div class="links">
+                    <%= link_to 'enjoy', user_post_path(@user, post), class: "login100-social-item bg1 rink" %>
+                    <%= link_to 'edit', edit_user_post_path(@user, post), class: "login100-social-item bg2 rink" %>
+                    <%= link_to 'delete',user_post_path(@user, post), method: 'delete', class: "login100-social-item bg3 rink", data: { confirm: "are you sure?"} %>     
+                </div>
+            </li>
+        <% end %>
+    </ul>
+</div>
+  
+    
+
+
+

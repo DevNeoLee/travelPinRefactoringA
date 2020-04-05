@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TravelPin</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= favicon_link_tag asset_path('icons/travel.png') %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <link href="https://fonts.googleapis.com/css2?family=Sen&display=swap" rel="stylesheet">
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+
+  <body>
+    <div class="container backphoto">
+        <div class="main_container">
+
+          <nav class="main_nav">
+            <a class="logo_link" href="/">
+              <div class="logo">
+                <%= image_tag("icons/travel.png", :alt => "travel_icon", class: "logo_img") %> 
+                <h1> TravelPin </h1>
+              </div>
+            </a>
+
+            <% if current_user  %>
+            <div class="search_nav_container">
+                <%= form_tag user_posts_path(current_user), method: 'get',style: "margin: 0;" do %>
+                  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+						
+                <div class="search_bar_container">
+                  <%= text_field_tag :search, params[:search], class: "nav_input", placeholder: "  search..." %>
+                  <%= submit_tag("search", class: "nav_search_button")  %>
+                </div>
+                <% end %>
+                
+                <ul class="right_nav">
+                    <li><%= link_to 'Home',user_path(current_user) ,class: "nav_list"%></li>
+                    <li><%= link_to 'NewPost', new_user_post_path(current_user) ,class: "nav_list" %></li>
+                    <li><%= link_to 'logout', session_path(current_user) ,method: 'delete',class: "nav_list", data: { confirm: "are you sure to log out?"} %></li>
+                    <li><%= link_to 'userMenu','#' ,class: "nav_list"%></li>   
+                </ul>
+            </div>
+                  
+              
+            <% end %>
+          </nav>
+                  <hr>
+          <%= yield %>
+          <hr>
+          <footer> <div><span><p>© Justin K Lee. All rights reserved. </span><span>Design by: <a href="https://colorlib.com/wp/"> Colorlib </a></span> <span> Icon by: <a href="https://icons8.com/"> Icons8 </a></span></div></footer>
+        </div>
+    </div>
+  </body>
+</html>
