@@ -1,4 +1,4 @@
-  live site: https://secure-brook-64571.herokuapp.com/
+  live site: 
 
 Rails App: Travel Photo Pinning App
 
