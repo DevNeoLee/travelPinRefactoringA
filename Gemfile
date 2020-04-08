@@ -47,6 +47,11 @@ group :development do
   gem 'hirb'
 end
 
+group :production do  
+  gem 'pg'
+  gem 'rails_12factor'
+end
+
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
@@ -59,9 +64,8 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
  gem 'sqlite3', group: :development
- gem 'pg', group: :production
+
  
  gem 'pry'
 #  gem "google-cloud-storage", require: false
- gem 'rails_12factor', group: :production
  gem "aws-sdk-s3", require: false
